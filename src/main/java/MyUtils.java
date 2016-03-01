@@ -17,4 +17,17 @@ public class MyUtils {
         }
         return -1;
     }
+    public static int compare(int one,int two){
+        return one-two;
+    }
+    public static int compareArr(int [] array,int [] target){
+        int minLength = Math.min(array.length,target.length);
+        for(int i = 0;i<minLength;++i){
+            int result = compare(array[i],target[i]);
+            if(result != 0){
+                return result;
+            }
+        }
+        return array.length-target.length;
+    }
 }
